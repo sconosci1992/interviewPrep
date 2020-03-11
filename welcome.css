@@ -1,0 +1,133 @@
+body {
+	font-family: sans-serif;
+	background-color: #ffe9b3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.background1 {
+	margin: 0 auto;
+	position: absolute;
+	top: 10%;
+	bottom: 10%;
+	width: 60%;
+	background-color: #ebca7a;
+	animation: slide .75s 1;
+}
+
+.background2 {
+	z-index: -1;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 80vh;
+	width: 65%;
+	background-color: #d9ae48;
+	animation: slideBotRight .75s 1;
+}
+
+.background3 {
+	z-index: -1;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 40vh;
+	width: 26%;
+	background-color: #d9be80;
+	  animation: slideTopLeft .75s 1;
+}
+
+@keyframes slide {
+	from {
+		transform: scale(0)
+	}
+	to {
+		transform: scale(1)
+	}
+}
+
+@keyframes slideTopLeft {
+	from {
+		transform: scale(0);
+		transform-origin: top left;
+	}
+	to {
+		transform: scale(1);
+		transform-origin: top left;
+	}
+}
+
+@keyframes slideBotRight {
+	from {
+		transform: scale(0);
+		transform-origin: bottom right;
+	}
+	to {
+		transform: scale(1);
+		transform-origin: bottom right;
+	}
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+
+}
+
+
+h1 {
+	z-index: 2;
+  cursor: pointer;
+  position: relative;
+  top: 40vh;
+  font-size: 3vw;
+  text-decoration: none;
+  color: #333;
+  text-transform: uppercase;
+  background-color: #ffe9b3;
+}
+
+h1:after {
+    content:" ";
+    width: 5px;
+    height: 5px;
+    position:absolute;
+    border :0px solid #333;
+    transition:all 1s;
+    top:-5px;
+    left:-5px;
+    border-top:5px solid #ebca7a;
+    border-left:5px solid #ebca7a;
+}
+
+h1:before {
+    content:" ";
+    width:10px;
+    height:10px;
+    position:absolute;
+    border :0px solid #333;
+    transition:all 1s;
+    bottom:-5px;
+    right:-5px;
+    border-bottom:5px solid #ebca7a;
+    border-right:5px solid #ebca7a;
+}
+h1:hover {
+  border-top-right-radius:0px;
+  border-bottom-left-radius:0px;
+}
+
+h1:hover:before {
+  border-bottom:5px solid #333;
+  border-right:5px solid #333;
+  width: 105%;
+  height: 120%;
+}
+
+h1:hover:after {
+  border-top:5px solid #333;
+  border-left:5px solid #333;
+  width: 105%;
+  height: 120%;
+}

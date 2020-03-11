@@ -1,44 +1,56 @@
 * {
 	border: 0;
 	padding: 0;
-  margin: 0;
-  transition: .5s all .2 ease-in-out;
+	margin: 0;
+	transition: .5s all .2 ease-in-out;
 }
 
 body {
 	background-color: #ffe9b3;
 	font-size: 3.5vw;
-  font-family: sans-serif;
-  color: #333;
+	font-family: sans-serif;
+	color: #333;
+	transition: 1s ease-in-out .1s;
 }
 
 h1 {
   font-family: 'Nunito-sans', sans-serif;
   color: #c03;
-  display: inline-block;
-  
   border-bottom: 5px solid #c03;
-  font-size: 6vw;
-  grid-column: 2;
-  grid-row: 1;
+  font-size: 2em;
+  position: absolute;
+  left: 5vw;
+  top: 3vh;
+   line-height: 1em;
 }
 
 h2 {
   margin: 0 auto;
   font-weight: 100;
-  font-size: 5vw;
-  grid-column: 1/6;
-  grid-row: 2;
+  font-size: 1.25em;
   color: #333;
+  position: absolute;
+  left: 12vw;
+  top: 20vh;
 }
 
 p {
-  color: white;
-  grid-column: 3/8;
-  grid-row: 4/9;
-  margin: 0 auto;
-  font-size: 1.5vw;
-  padding-right: 10%;
+	color: white;
+	position: absolute;
+	left: 25vw;
+	top: 38vh;
+	width: 35vw;
+	margin: 0 auto;
+	font-size: .5em;
+	padding-right: 10%;
+}
+
+.name {
+	z-index: 2;
+	position: absolute;
+	left: 1vw;
+	top: 92vh;
+	padding: 0;
 }
 
 span {
@@ -65,8 +77,9 @@ span {
   left: 0;
   top: 0;
   width: 60%;
-  height: 600px;
+  height: 75vh;
   background-color: #d9ae48;
+    animation: slideTopLeft 1s 1;
 }
 
 .background3 {
@@ -74,16 +87,54 @@ span {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 275px;
-  height: 150px;
+  width: 23vw;
+  height: 32vh;
   background-color: #d9be80;
+  animation: slideBotLeft 1s 1;
 }
 
 .background1 {
   z-index: -1;
-  grid-column: 7 / 12;
-  grid-row: 2/9;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 42vw;
+  height: 80vh;
   background-color: #ebca7a;
+  animation: slideBotRight 1s 1;
+}
+
+@keyframes slideBotLeft {
+	from {
+		transform: scale(0);
+		transform-origin: bottom left;
+	}
+	to {
+		transform: scale(1);
+		transform-origin: bottom left;
+	}
+}
+
+@keyframes slideBotRight {
+	from {
+		transform: scale(0);
+		transform-origin: bottom right;
+	}
+	to {
+		transform: scale(1);
+		transform-origin: bottom right;
+	}
+}
+
+@keyframes slideTopLeft {
+	from {
+		transform: scale(0);
+		transform-origin: top left;
+	}
+	to {
+		transform: scale(1);
+		transform-origin: top left;
+	}
 }
 
 #sofa {
@@ -97,8 +148,9 @@ span {
 
 .sofa {
   text-align: center;
-  grid-row: 7;
-  grid-column: 5;
+  position: absolute;
+  bottom: 27vh;
+  left: 51vw;
 }
 
 .sofa a:after {
@@ -113,14 +165,16 @@ span {
 
 .sort{
   margin: 0 0 0 53%;
-  grid-row: 4;
-  grid-column: 8/11;
+  position: absolute;
+  right: 6vw;
+  bottom: 29vh;
 }
 
 .search{
   margin: 0 auto;
-  grid-row: 5;
-  grid-column: 8/11;
+  position: absolute;
+  right: 6vw;
+  bottom: 19vh;
 }
 
 .search a:hover:before {
@@ -134,14 +188,9 @@ span {
 }
 
 .structures{
-  margin: 0 auto 0 0;
-  grid-row: 6;
-  grid-column: 8/11;
-  text-align: center;
-}
-
-.structures a {
-  display: inline-block;
+  position: absolute;
+  right: 6vw;
+  bottom: 9vh;
 }
 
 .structures a:hover:before {
